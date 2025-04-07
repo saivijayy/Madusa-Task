@@ -1,0 +1,91 @@
+{
+    "tasks": [
+        {
+            "attachments": [
+                {
+                    "id": "dcbd0ff0-80ab-4d0c-9da6-87a998582b9f",
+                    "type": "ElasticNetworkInterface",
+                    "status": "ATTACHED",
+                    "details": [
+                        {
+                            "name": "subnetId",
+                            "value": "subnet-0fd8dd55ecd54e1a4"
+                        },
+                        {
+                            "name": "networkInterfaceId",
+                            "value": "eni-0d027d2f202d57d7e"
+                        },
+                        {
+                            "name": "macAddress",
+                            "value": "12:aa:20:b8:e1:ab"
+                        },
+                        {
+                            "name": "privateDnsName",
+                            "value": "ip-10-0-2-61.ec2.internal"
+                        },
+                        {
+                            "name": "privateIPv4Address",
+                            "value": "10.0.2.61"
+                        }
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "name": "ecs.cpu-architecture",
+                    "value": "x86_64"
+                }
+            ],
+            "availabilityZone": "us-east-1b",
+            "clusterArn": "arn:aws:ecs:us-east-1:850995548387:cluster/medusa-cluster",
+            "containers": [
+                {
+                    "containerArn": "arn:aws:ecs:us-east-1:850995548387:container/medusa-cluster/180d3897c65244a2af46efaa6eb8e4a8/be1dd6bb-fcee-447b-8b8e-207e79977862",
+                    "taskArn": "arn:aws:ecs:us-east-1:850995548387:task/medusa-cluster/180d3897c65244a2af46efaa6eb8e4a8",
+                    "name": "medusa-backend",
+                    "image": "850995548387.dkr.ecr.us-east-1.amazonaws.com/medusa-backend:latest",
+                    "lastStatus": "PENDING",
+                    "networkInterfaces": [
+                        {
+                            "attachmentId": "dcbd0ff0-80ab-4d0c-9da6-87a998582b9f",
+                            "privateIpv4Address": "10.0.2.61"
+                        }
+                    ],
+                    "healthStatus": "UNKNOWN",
+                    "cpu": "0"
+                }
+            ],
+            "cpu": "256",
+            "createdAt": "2025-04-07T12:42:51.359000+00:00",
+            "desiredStatus": "RUNNING",
+            "enableExecuteCommand": false,
+            "group": "service:medusa-service",
+            "healthStatus": "UNKNOWN",
+            "lastStatus": "PENDING",
+            "launchType": "FARGATE",
+            "memory": "512",
+            "overrides": {
+                "containerOverrides": [
+                    {
+                        "name": "medusa-backend"
+                    }
+                ],
+                "inferenceAcceleratorOverrides": []
+            },
+            "platformVersion": "1.4.0",
+            "platformFamily": "Linux",
+            "startedBy": "ecs-svc/4087789334449390364",
+            "tags": [],
+            "taskArn": "arn:aws:ecs:us-east-1:850995548387:task/medusa-cluster/180d3897c65244a2af46efaa6eb8e4a8",
+            "taskDefinitionArn": "arn:aws:ecs:us-east-1:850995548387:task-definition/medusa-task:12",
+            "version": 2,
+            "ephemeralStorage": {
+                "sizeInGiB": 20
+            },
+            "fargateEphemeralStorage": {
+                "sizeInGiB": 20
+            }
+        }
+    ],
+    "failures": []
+}

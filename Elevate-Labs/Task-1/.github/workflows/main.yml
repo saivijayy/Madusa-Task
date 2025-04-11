@@ -20,9 +20,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: myapp
 
       - name: Run tests (optional)
         run: echo "1"
+        working-directory: myapp
 
       - name: Build Docker image
         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/express-cicd-app .

@@ -17,8 +17,17 @@ This project deploys the open-source [Medusa](https://medusajs.com/) backend to 
 ---
 
 ## 🗂️ Project Structure
-
-. ├── .github/workflows/ # GitHub Actions for CD │ └── deploy.yml ├── terraform/ # Terraform IaC configs │ ├── main.tf │ ├── variables.tf │ ├── terraform.tfvars │ └── ... ├── Dockerfile # Medusa Docker container ├── package.json # Medusa dependencies ├── README.md # Project documentation └── .gitignore # Ignore state files, node_modules, etc.
+  ├── .github/workflows/ # GitHub Actions for CD
+  │ └── deploy.yml 
+  ├── terraform/ # Terraform IaC configs │ 
+  ├── main.tf │ 
+  ├── variables.tf │ 
+  ├── terraform.tfvars │ 
+  └── ... 
+  ├── Dockerfile # Medusa Docker container 
+  ├── package.json # Medusa dependencies 
+  ├── README.md # Project documentation 
+  └── .gitignore # Ignore state files, node_modules, etc.
 
 ---
 yaml

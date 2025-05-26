@@ -20,78 +20,48 @@ This project deploys the open-source [Medusa](https://medusajs.com/) backend to 
 
 . ├── .github/workflows/ # GitHub Actions for CD │ └── deploy.yml ├── terraform/ # Terraform IaC configs │ ├── main.tf │ ├── variables.tf │ ├── terraform.tfvars │ └── ... ├── Dockerfile # Medusa Docker container ├── package.json # Medusa dependencies ├── README.md # Project documentation └── .gitignore # Ignore state files, node_modules, etc.
 
-yaml
-Copy
-Edit
-
 ---
-
-## ⚙️ Infrastructure Overview
-
-pgsql
-Copy
-Edit
-        +-----------------------------+
-        |    GitHub Actions Workflow  |
-        | - Build Docker image        |
-        | - Push to ECR               |
-        | - Deploy to ECS Fargate     |
-        +-------------+---------------+
-                      |
-                      ▼
-+--------------------- AWS Infrastructure ----------------------+ | | | +----------------+ +----------------+ +-----------+ | | | VPC | --> | Subnets | --> | ECS w/ | | | | | | (Public/Private)| | Fargate | | | +----------------+ +----------------+ +-----------+ | | | | | | | ▼ ▼ ▼ | | Internet Gateway NAT Gateway RDS (Postgres)| | (Medusa DB) | +---------------------------------------------------------------+
-
 yaml
-Copy
-Edit
-
 ---
 
 ## 🚀 Deployment Steps
 
 ### 1. Clone the repository
-
 ```bash
 git clone https://github.com/saivijayy/Medusa-Task.git
 cd Medusa-Task
-2. Provision AWS infrastructure
-bash
-Copy
-Edit
+```
+### 2. Provision AWS infrastructure
+```bash
 cd terraform
 terraform init
 terraform apply
 Update terraform.tfvars with your AWS values (e.g., DB credentials, region).
-
-3. Trigger CI/CD pipeline
-bash
-Copy
-Edit
+```
+### 3. Trigger CI/CD pipeline
+```bash
 git add .
 git commit -m "Initial deploy"
 git push
-This will:
-
+```
+### This will:
 Build your Docker image
-
 Push it to AWS ECR
-
 Update your ECS service with the new image
 
 ✅ ECS tasks are successfully deployed and containerized Medusa backend is up!
 
-🔒 .gitignore (safety for secrets)
+### 🔒 .gitignore (safety for secrets)
 We’ve ensured sensitive files and large unnecessary folders are excluded:
 
-bash
-Copy
-Edit
 node_modules/
 .terraform/
 *.tfstate
 *.tfstate.backup
 .env
 terraform/*.tfstate*
+
+
 🙋‍♂️ Author
 Sai Vijay
 📍 GitHub Profile
